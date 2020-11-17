@@ -10,14 +10,14 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace StatementMerge
 {
-	//Things I need to change when this runs next quarter:
-	//The file path in the GetPath() and GetPaths() methods, should be 2 changes.
-	//Change the subject & body in both createMailItem methods so that it reflects the accurate as of date.
-	
-	//TODO: add a console readline to read in the "as of date"
-	//Create variable for that paths so I only have to change it once
-	//Have it skip the accounts in the CSV that do not have a match and output them to the console
-	class Program
+    //Things I need to change when this runs each quarter:
+    //The file path in the GetPath() and GetPaths() methods, should be 2 changes.
+    //Change the subject & body in both createMailItem methods so that it reflects the accurate as of date.
+
+    //TODO: add a console readline to read in the "as of date"
+    //Create variable for that paths so I only have to change it once
+    //Have it skip the accounts in the CSV that do not have a match and output them to the console
+    class Program
 	{
 		[STAThread]
 		static void Main(string[] args)
@@ -51,10 +51,7 @@ namespace StatementMerge
 				string recip = dataRow["name"].ToString();
 				string email = dataRow["E-mail Address"].ToString();
 				string entity = dataRow["Account Name"].ToString();
-
 				string designation= (dataRow["Desig"].ToString());
-
-				
 
 				if (designation.Length < 5)
 				{
@@ -65,16 +62,15 @@ namespace StatementMerge
 				program.CreateMailItem(email, recip, entity, program.GetPath(designation));
 
 			}
-		
+			
+			//Selects destinct names and emails from the CSV using LINQ
 			var distinctIds = MatchTable.AsEnumerable().Select(row => row.Field<string>("Name")).Distinct().ToList();
 			var distinctEmail = MatchTable.AsEnumerable().Select(row => row.Field<string>("E-mail Address")).Distinct().ToList();
 			
 			foreach (var item in distinctIds)
 			{
-				
 				string sendName = item;
-				
-				
+
 				accounts.Clear();
 				paths.Clear();
 				for (int i = 0; i < MatchTable.Rows.Count; i++)
@@ -155,7 +151,6 @@ namespace StatementMerge
 			mailItem.Importance = Outlook.OlImportance.olImportanceLow;
 			mailItem.Save();
 			mailItem.UnRead = true;
-			
 		}
 
 		private void CreateMailItem(string subject, string recipient, string account, string filepath)
@@ -224,6 +219,7 @@ namespace StatementMerge
 			return match;
 		}
 
+		//THis is for people who have a singular statement
 		private string GetPath(string designation)
 		{
 			string path = null;
@@ -237,11 +233,11 @@ namespace StatementMerge
 				string fullName = foundFile.FullName;
 				path = fullName;
 				return path;
-				//Console.WriteLine(fullName);
 			}
 			return path;
 		}
 
+		//This is for people who have multiple statements going to them
 		private List<string> GetPaths(List<string> designation)
 		{
 			List<string> path = new List<string>();
@@ -261,6 +257,7 @@ namespace StatementMerge
 			return path;
 		}
 
+		//this string is the user who runs the script's default signature
 		private string ReadSignature()
 		{
 			string appDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Microsoft\\Signatures";
