@@ -14,8 +14,9 @@ namespace StatementMerge
 	//The file path in the GetPath() and GetPaths() methods, should be 2 changes.
 	//Change the subject & body in both createMailItem methods so that it reflects the accurate as of date.
 	
-		//Possible improvements: add a console readline to read in the "as of date"
-	//Find someway to dynamically pick where the pdfs are
+	//TODO: add a console readline to read in the "as of date"
+	//Create variable for that paths so I only have to change it once
+	//Have it skip the accounts in the CSV that do not have a match and output them to the console
 	class Program
 	{
 		[STAThread]
@@ -104,6 +105,9 @@ namespace StatementMerge
 					}	
 				}
 			}
+			//Signifies the process was successful
+			Console.WriteLine("Process Completed");
+			Console.ReadKey();
 		}
 
 		private void sendMail()
@@ -127,10 +131,10 @@ namespace StatementMerge
 			Outlook.Application app = new Outlook.Application();
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 			
-			mailItem.Subject = "Revised 2019 Q2 Quarterly Statements";
+			mailItem.Subject = "2020 Q1 Quarterly Statements";
 			mailItem.To = subject;
 			
-			string body = recipient + ", <br/> Attached is the revised quarterly statement for period ended December 31, 2019 for the following accounts. The previous statements incorrectly showed Q1 activity. This has since been corrected.: <br/>";
+			string body = recipient + ", <br/> Attached is the quarterly statement for period ended Septmeber 30, 2020 for the following accounts: <br/>";
 
 			foreach (var item in accounts)
 			{
@@ -160,10 +164,10 @@ namespace StatementMerge
 
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 
-			mailItem.Subject = account + " Revised Quarterly Statement";
+			mailItem.Subject = account + "2020 Q1 Quarterly Statements";
 			mailItem.To = subject;
 			//<br/> is a html line break
-			string body = recipient + ", <br/> Attached is revisted the quarterly statement for period ended December 31, 2019 for the " + account + " account.  The previously sent statments incorrectly showed Q1 activity. This has since been corrected. Please let me know if you have any questions or concerns. <br/>";
+			string body = recipient + ", <br/> Attached is the quarterly statement for period ended September 30, 2020 for the " + account + " account. Please let me know if you have any questions or concerns. <br/>";
 
 			mailItem.HTMLBody = body + ReadSignature();
 
@@ -225,7 +229,7 @@ namespace StatementMerge
 			string path = null;
 
 			string partialName = designation;
-			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"k:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2019-2020\2nd Qtr");
+			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\1st Qtr");
 			FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 			foreach (FileInfo foundFile in filesInDir)
@@ -245,7 +249,7 @@ namespace StatementMerge
 			foreach (var item in designation)
 			{
 				string partialName = item;
-				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"k:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2019-2020\2nd Qtr");
+				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\1st Qtr");
 				FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 				foreach (FileInfo foundFile in filesInDir)
