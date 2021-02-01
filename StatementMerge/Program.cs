@@ -128,10 +128,10 @@ namespace StatementMerge
 			Outlook.Application app = new Outlook.Application();
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 			
-			mailItem.Subject = "2020 Q1 Quarterly Statements";
+			mailItem.Subject = "2020 Q2 Quarterly Statements";
 			mailItem.To = subject;
 			
-			string body = recipient + ", <br/> Attached is the quarterly statement for period ended Septmeber 30, 2020 for the following accounts: <br/>";
+			string body = recipient + ", <br/> Attached is the quarterly statement for period ended December 31, 2020 for the following accounts: <br/>";
 
 			foreach (var item in accounts)
 			{
@@ -160,10 +160,10 @@ namespace StatementMerge
 
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 
-			mailItem.Subject = account + "2020 Q1 Quarterly Statements";
+			mailItem.Subject = account + "2020 Q2 Quarterly Statements";
 			mailItem.To = subject;
 			//<br/> is a html line break
-			string body = recipient + ", <br/> Attached is the quarterly statement for period ended September 30, 2020 for the " + account + " account. Please let me know if you have any questions or concerns. <br/>";
+			string body = recipient + ", <br/> Attached is the quarterly statement for period ended December 31, 2020 for the " + account + " account. Please let me know if you have any questions or concerns. <br/>";
 
 			mailItem.HTMLBody = body + ReadSignature();
 
@@ -226,7 +226,7 @@ namespace StatementMerge
 			string path = null;
 
 			string partialName = designation;
-			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\1st Qtr");
+			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\2nd Qtr");
 			FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 			foreach (FileInfo foundFile in filesInDir)
@@ -247,7 +247,7 @@ namespace StatementMerge
 			foreach (var item in designation)
 			{
 				string partialName = item;
-				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\1st Qtr");
+				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\2nd Qtr");
 				FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 				foreach (FileInfo foundFile in filesInDir)
