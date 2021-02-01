@@ -226,7 +226,7 @@ namespace StatementMerge
 			string path = null;
 
 			string partialName = designation;
-			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\1st Qtr");
+			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\2nd Qtr");
 			FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 			foreach (FileInfo foundFile in filesInDir)
@@ -247,7 +247,7 @@ namespace StatementMerge
 			foreach (var item in designation)
 			{
 				string partialName = item;
-				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\1st Qtr");
+				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\2nd Qtr");
 				FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 				foreach (FileInfo foundFile in filesInDir)
