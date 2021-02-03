@@ -34,7 +34,9 @@ namespace StatementMerge
             this.fourthButton = new System.Windows.Forms.RadioButton();
             this.thirdButton = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.asofPicker = new System.Windows.Forms.MonthCalendar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.runButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // firstButton
@@ -90,18 +92,38 @@ namespace StatementMerge
             this.label1.TabIndex = 5;
             this.label1.Text = "Please Select a Quarter";
             // 
-            // monthCalendar1
+            // asofPicker
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(178, 36);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 6;
+            this.asofPicker.Location = new System.Drawing.Point(178, 36);
+            this.asofPicker.Name = "asofPicker";
+            this.asofPicker.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(178, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Please Select a \"As Of\" Date";
+            // 
+            // runButton
+            // 
+            this.runButton.Location = new System.Drawing.Point(459, 107);
+            this.runButton.Name = "runButton";
+            this.runButton.Size = new System.Drawing.Size(115, 23);
+            this.runButton.TabIndex = 8;
+            this.runButton.Text = "Run";
+            this.runButton.UseVisualStyleBackColor = true;
             // 
             // optionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 207);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.runButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.asofPicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fourthButton);
             this.Controls.Add(this.thirdButton);
@@ -120,6 +142,8 @@ namespace StatementMerge
         private System.Windows.Forms.RadioButton fourthButton;
         private System.Windows.Forms.RadioButton thirdButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar asofPicker;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button runButton;
     }
 }
