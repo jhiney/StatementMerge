@@ -29,19 +29,13 @@ namespace StatementMerge
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.firstButton = new System.Windows.Forms.RadioButton();
             this.secondButton = new System.Windows.Forms.RadioButton();
             this.fourthButton = new System.Windows.Forms.RadioButton();
             this.thirdButton = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(376, 83);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
             // 
             // firstButton
             // 
@@ -87,16 +81,32 @@ namespace StatementMerge
             this.thirdButton.Text = "3rd Quarter";
             this.thirdButton.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Please Select a Quarter";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(178, 36);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 6;
+            // 
             // optionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 196);
+            this.ClientSize = new System.Drawing.Size(611, 207);
+            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.fourthButton);
             this.Controls.Add(this.thirdButton);
             this.Controls.Add(this.secondButton);
             this.Controls.Add(this.firstButton);
-            this.Controls.Add(this.dateTimePicker1);
             this.Name = "optionForm";
             this.Text = "optionForm";
             this.ResumeLayout(false);
@@ -105,11 +115,11 @@ namespace StatementMerge
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.RadioButton firstButton;
         private System.Windows.Forms.RadioButton secondButton;
         private System.Windows.Forms.RadioButton fourthButton;
         private System.Windows.Forms.RadioButton thirdButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
