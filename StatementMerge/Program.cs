@@ -30,6 +30,9 @@ namespace StatementMerge
 			List<string> paths = new List<string>();
 			int j = 0;
 
+			optionForm oform = new optionForm();
+			oform.ShowDialog();
+
 			InitialTable = program.csvToDataTable();
 			MatchTable = program.MatcherTable(InitialTable);
 
