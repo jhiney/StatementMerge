@@ -30,46 +30,72 @@ namespace StatementMerge
         private void InitializeComponent()
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.firstButton = new System.Windows.Forms.RadioButton();
+            this.secondButton = new System.Windows.Forms.RadioButton();
+            this.fourthButton = new System.Windows.Forms.RadioButton();
+            this.thirdButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 101);
+            this.dateTimePicker1.Location = new System.Drawing.Point(376, 83);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
-            // radioButton1
+            // firstButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(254, 44);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.firstButton.AutoSize = true;
+            this.firstButton.Location = new System.Drawing.Point(12, 36);
+            this.firstButton.Name = "firstButton";
+            this.firstButton.Size = new System.Drawing.Size(77, 17);
+            this.firstButton.TabIndex = 1;
+            this.firstButton.TabStop = true;
+            this.firstButton.Text = "1st Quarter";
+            this.firstButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // secondButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(254, 68);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.secondButton.AutoSize = true;
+            this.secondButton.Location = new System.Drawing.Point(12, 60);
+            this.secondButton.Name = "secondButton";
+            this.secondButton.Size = new System.Drawing.Size(81, 17);
+            this.secondButton.TabIndex = 2;
+            this.secondButton.TabStop = true;
+            this.secondButton.Text = "2nd Quarter";
+            this.secondButton.UseVisualStyleBackColor = true;
+            // 
+            // fourthButton
+            // 
+            this.fourthButton.AutoSize = true;
+            this.fourthButton.Location = new System.Drawing.Point(12, 107);
+            this.fourthButton.Name = "fourthButton";
+            this.fourthButton.Size = new System.Drawing.Size(78, 17);
+            this.fourthButton.TabIndex = 4;
+            this.fourthButton.TabStop = true;
+            this.fourthButton.Text = "4th Quarter";
+            this.fourthButton.UseVisualStyleBackColor = true;
+            // 
+            // thirdButton
+            // 
+            this.thirdButton.AutoSize = true;
+            this.thirdButton.Location = new System.Drawing.Point(12, 83);
+            this.thirdButton.Name = "thirdButton";
+            this.thirdButton.Size = new System.Drawing.Size(78, 17);
+            this.thirdButton.TabIndex = 3;
+            this.thirdButton.TabStop = true;
+            this.thirdButton.Text = "3rd Quarter";
+            this.thirdButton.UseVisualStyleBackColor = true;
             // 
             // optionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 196);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.fourthButton);
+            this.Controls.Add(this.thirdButton);
+            this.Controls.Add(this.secondButton);
+            this.Controls.Add(this.firstButton);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "optionForm";
             this.Text = "optionForm";
@@ -81,7 +107,9 @@ namespace StatementMerge
         #endregion
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton firstButton;
+        private System.Windows.Forms.RadioButton secondButton;
+        private System.Windows.Forms.RadioButton fourthButton;
+        private System.Windows.Forms.RadioButton thirdButton;
     }
 }
