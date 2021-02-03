@@ -130,7 +130,7 @@ namespace StatementMerge
             this.Controls.Add(this.secondButton);
             this.Controls.Add(this.firstButton);
             this.Name = "optionForm";
-            this.Text = "optionForm";
+            this.Text = "Quarterly Statement Options";
             this.ResumeLayout(false);
             this.PerformLayout();
 
