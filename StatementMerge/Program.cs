@@ -110,21 +110,21 @@ namespace StatementMerge
 			Console.ReadKey();
 		}
 
-		private void sendMail()
-		{
-			Outlook.Application app = new Outlook.Application();
-			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
+		//private void sendMail()
+		//{
+		//	Outlook.Application app = new Outlook.Application();
+		//	Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 			
-			mailItem.Subject = "Wow";
-			mailItem.To = "hiney.jake@gmail.com";
-			string body = "help";
+		//	mailItem.Subject = "Wow";
+		//	mailItem.To = "hiney.jake@gmail.com";
+		//	string body = "help";
 			
-			mailItem.HTMLBody = body + ReadSignature();
-			mailItem.Importance = Outlook.OlImportance.olImportanceLow;
+		//	mailItem.HTMLBody = body + ReadSignature();
+		//	mailItem.Importance = Outlook.OlImportance.olImportanceLow;
 
-			mailItem.Save();
-			mailItem.UnRead = true;
-		}
+		//	mailItem.Save();
+		//	mailItem.UnRead = true;
+		//}
 
 		private void CreateMultipleMailItem(string subject, string recipient, List<string> accounts, List<string> filepath)
 		{
