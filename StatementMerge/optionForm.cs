@@ -42,7 +42,7 @@ namespace StatementMerge
 
         private void asofPicker_ValueChanged(object sender, EventArgs e)
         {
-            asofConfirm.Text = asofPicker.Value.ToShortDateString();
+            asofConfirm.Text = asofPicker.Value.ToLongDateString();
         }
     }
 }
