@@ -37,12 +37,14 @@ namespace StatementMerge
             this.asofPicker = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
             this.runButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // firstButton
             // 
             this.firstButton.AutoSize = true;
-            this.firstButton.Location = new System.Drawing.Point(12, 36);
+            this.firstButton.Location = new System.Drawing.Point(0, 27);
             this.firstButton.Name = "firstButton";
             this.firstButton.Size = new System.Drawing.Size(77, 17);
             this.firstButton.TabIndex = 1;
@@ -53,7 +55,7 @@ namespace StatementMerge
             // secondButton
             // 
             this.secondButton.AutoSize = true;
-            this.secondButton.Location = new System.Drawing.Point(12, 60);
+            this.secondButton.Location = new System.Drawing.Point(0, 51);
             this.secondButton.Name = "secondButton";
             this.secondButton.Size = new System.Drawing.Size(81, 17);
             this.secondButton.TabIndex = 2;
@@ -64,7 +66,7 @@ namespace StatementMerge
             // fourthButton
             // 
             this.fourthButton.AutoSize = true;
-            this.fourthButton.Location = new System.Drawing.Point(12, 107);
+            this.fourthButton.Location = new System.Drawing.Point(0, 98);
             this.fourthButton.Name = "fourthButton";
             this.fourthButton.Size = new System.Drawing.Size(78, 17);
             this.fourthButton.TabIndex = 4;
@@ -75,7 +77,7 @@ namespace StatementMerge
             // thirdButton
             // 
             this.thirdButton.AutoSize = true;
-            this.thirdButton.Location = new System.Drawing.Point(12, 83);
+            this.thirdButton.Location = new System.Drawing.Point(0, 74);
             this.thirdButton.Name = "thirdButton";
             this.thirdButton.Size = new System.Drawing.Size(78, 17);
             this.thirdButton.TabIndex = 3;
@@ -116,21 +118,33 @@ namespace StatementMerge
             this.runButton.Text = "Run";
             this.runButton.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.secondButton);
+            this.groupBox1.Controls.Add(this.firstButton);
+            this.groupBox1.Controls.Add(this.thirdButton);
+            this.groupBox1.Controls.Add(this.fourthButton);
+            this.groupBox1.Location = new System.Drawing.Point(12, 46);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(87, 127);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // optionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 207);
+            this.ClientSize = new System.Drawing.Size(947, 574);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.asofPicker);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.fourthButton);
-            this.Controls.Add(this.thirdButton);
-            this.Controls.Add(this.secondButton);
-            this.Controls.Add(this.firstButton);
             this.Name = "optionForm";
             this.Text = "Quarterly Statement Options";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +159,6 @@ namespace StatementMerge
         private System.Windows.Forms.MonthCalendar asofPicker;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button runButton;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
