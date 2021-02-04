@@ -35,5 +35,10 @@ namespace StatementMerge
         {
             Console.WriteLine(quarter.ToString());
         }
+
+        private void asofPicker_ValueChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(asofPicker.Value.ToShortDateString());
+        }
     }
 }

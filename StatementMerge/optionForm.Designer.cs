@@ -34,10 +34,10 @@ namespace StatementMerge
             this.fourthButton = new System.Windows.Forms.RadioButton();
             this.thirdButton = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.asofPicker = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
             this.runButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.asofPicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,12 +98,6 @@ namespace StatementMerge
             this.label1.TabIndex = 5;
             this.label1.Text = "Please Select a Quarter";
             // 
-            // asofPicker
-            // 
-            this.asofPicker.Location = new System.Drawing.Point(178, 36);
-            this.asofPicker.Name = "asofPicker";
-            this.asofPicker.TabIndex = 6;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -136,15 +130,23 @@ namespace StatementMerge
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // asofPicker
+            // 
+            this.asofPicker.Location = new System.Drawing.Point(165, 36);
+            this.asofPicker.Name = "asofPicker";
+            this.asofPicker.Size = new System.Drawing.Size(200, 20);
+            this.asofPicker.TabIndex = 10;
+            this.asofPicker.ValueChanged += new System.EventHandler(this.asofPicker_ValueChanged);
+            // 
             // optionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 574);
+            this.Controls.Add(this.asofPicker);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.asofPicker);
             this.Controls.Add(this.label1);
             this.Name = "optionForm";
             this.Text = "Quarterly Statement Options";
@@ -161,9 +163,9 @@ namespace StatementMerge
         private System.Windows.Forms.RadioButton fourthButton;
         private System.Windows.Forms.RadioButton thirdButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MonthCalendar asofPicker;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button runButton;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker asofPicker;
     }
 }
