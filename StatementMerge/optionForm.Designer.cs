@@ -51,6 +51,7 @@ namespace StatementMerge
             this.firstButton.TabStop = true;
             this.firstButton.Text = "1st Quarter";
             this.firstButton.UseVisualStyleBackColor = true;
+            this.firstButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
             // secondButton
             // 
@@ -62,6 +63,7 @@ namespace StatementMerge
             this.secondButton.TabStop = true;
             this.secondButton.Text = "2nd Quarter";
             this.secondButton.UseVisualStyleBackColor = true;
+            this.secondButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
             // fourthButton
             // 
@@ -73,6 +75,7 @@ namespace StatementMerge
             this.fourthButton.TabStop = true;
             this.fourthButton.Text = "4th Quarter";
             this.fourthButton.UseVisualStyleBackColor = true;
+            this.fourthButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
             // thirdButton
             // 
@@ -84,6 +87,7 @@ namespace StatementMerge
             this.thirdButton.TabStop = true;
             this.thirdButton.Text = "3rd Quarter";
             this.thirdButton.UseVisualStyleBackColor = true;
+            this.thirdButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
             // label1
             // 
@@ -117,6 +121,7 @@ namespace StatementMerge
             this.runButton.TabIndex = 8;
             this.runButton.Text = "Run";
             this.runButton.UseVisualStyleBackColor = true;
+            this.runButton.Click += new System.EventHandler(this.runButton_Click);
             // 
             // groupBox1
             // 
