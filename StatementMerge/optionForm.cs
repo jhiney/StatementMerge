@@ -7,6 +7,7 @@ namespace StatementMerge
     {
         
         public string quarterString = null;
+        public string asofString = null;
 
         public optionForm()
         {
@@ -17,19 +18,19 @@ namespace StatementMerge
         {
             if(firstButton.Checked)
             {
-                quarterString = "1st";
+                quarterString = "1st Qtr";
             }
             if(secondButton.Checked)
             {
-                quarterString = "2nd";
+                quarterString = "2nd Qtr";
             }
             if(thirdButton.Checked)
             {
-                quarterString = "3rd";
+                quarterString = "3rd Qtr";
             }
             if(fourthButton.Checked)
             {
-                quarterString = "4th";
+                quarterString = "4th Qtr";
             }
 
             quarterConfirm.Text = quarterString;
@@ -37,12 +38,14 @@ namespace StatementMerge
 
         private void runButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(quarterString.ToString());
+            Close();
         }
 
         private void asofPicker_ValueChanged(object sender, EventArgs e)
         {
-            asofConfirm.Text = asofPicker.Value.ToLongDateString();
+            asofString = asofPicker.Value.ToLongDateString();
+            
+            asofConfirm.Text = asofString;
         }
     }
 }
