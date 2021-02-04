@@ -38,6 +38,11 @@ namespace StatementMerge
             this.runButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.asofPicker = new System.Windows.Forms.DateTimePicker();
+            this.confirmationLabel = new System.Windows.Forms.Label();
+            this.quarterLabel = new System.Windows.Forms.Label();
+            this.asofLabel = new System.Windows.Forms.Label();
+            this.quarterConfirm = new System.Windows.Forms.Label();
+            this.asofConfirm = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +114,7 @@ namespace StatementMerge
             // 
             // runButton
             // 
-            this.runButton.Location = new System.Drawing.Point(459, 107);
+            this.runButton.Location = new System.Drawing.Point(486, 153);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(115, 23);
             this.runButton.TabIndex = 8;
@@ -138,11 +143,59 @@ namespace StatementMerge
             this.asofPicker.TabIndex = 10;
             this.asofPicker.ValueChanged += new System.EventHandler(this.asofPicker_ValueChanged);
             // 
+            // confirmationLabel
+            // 
+            this.confirmationLabel.AutoSize = true;
+            this.confirmationLabel.Location = new System.Drawing.Point(417, 20);
+            this.confirmationLabel.Name = "confirmationLabel";
+            this.confirmationLabel.Size = new System.Drawing.Size(154, 13);
+            this.confirmationLabel.TabIndex = 11;
+            this.confirmationLabel.Text = "Please Confirm Your Selections";
+            // 
+            // quarterLabel
+            // 
+            this.quarterLabel.AutoSize = true;
+            this.quarterLabel.Location = new System.Drawing.Point(420, 37);
+            this.quarterLabel.Name = "quarterLabel";
+            this.quarterLabel.Size = new System.Drawing.Size(45, 13);
+            this.quarterLabel.TabIndex = 12;
+            this.quarterLabel.Text = "Quarter:";
+            // 
+            // asofLabel
+            // 
+            this.asofLabel.AutoSize = true;
+            this.asofLabel.Location = new System.Drawing.Point(420, 54);
+            this.asofLabel.Name = "asofLabel";
+            this.asofLabel.Size = new System.Drawing.Size(105, 13);
+            this.asofLabel.TabIndex = 13;
+            this.asofLabel.Text = "As Of Date for Email:";
+            // 
+            // quarterConfirm
+            // 
+            this.quarterConfirm.AutoSize = true;
+            this.quarterConfirm.Location = new System.Drawing.Point(472, 37);
+            this.quarterConfirm.Name = "quarterConfirm";
+            this.quarterConfirm.Size = new System.Drawing.Size(0, 13);
+            this.quarterConfirm.TabIndex = 14;
+            // 
+            // asofConfirm
+            // 
+            this.asofConfirm.AutoSize = true;
+            this.asofConfirm.Location = new System.Drawing.Point(532, 54);
+            this.asofConfirm.Name = "asofConfirm";
+            this.asofConfirm.Size = new System.Drawing.Size(0, 13);
+            this.asofConfirm.TabIndex = 15;
+            // 
             // optionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 574);
+            this.ClientSize = new System.Drawing.Size(613, 188);
+            this.Controls.Add(this.asofConfirm);
+            this.Controls.Add(this.quarterConfirm);
+            this.Controls.Add(this.asofLabel);
+            this.Controls.Add(this.quarterLabel);
+            this.Controls.Add(this.confirmationLabel);
             this.Controls.Add(this.asofPicker);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.runButton);
@@ -167,5 +220,10 @@ namespace StatementMerge
         private System.Windows.Forms.Button runButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker asofPicker;
+        private System.Windows.Forms.Label confirmationLabel;
+        private System.Windows.Forms.Label quarterLabel;
+        private System.Windows.Forms.Label asofLabel;
+        private System.Windows.Forms.Label quarterConfirm;
+        private System.Windows.Forms.Label asofConfirm;
     }
 }
