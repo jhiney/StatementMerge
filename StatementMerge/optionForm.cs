@@ -5,7 +5,10 @@ namespace StatementMerge
 {
     public partial class optionForm : Form
     {
-        public int quarter = 0;
+        
+        public string quarterString = null;
+        public string asofString = null;
+
         public optionForm()
         {
             InitializeComponent();
@@ -15,25 +18,34 @@ namespace StatementMerge
         {
             if(firstButton.Checked)
             {
-                quarter = 1;
+                quarterString = "1st Qtr";
             }
             if(secondButton.Checked)
             {
-                quarter = 2;
+                quarterString = "2nd Qtr";
             }
             if(thirdButton.Checked)
             {
-                quarter = 3;
+                quarterString = "3rd Qtr";
             }
             if(fourthButton.Checked)
             {
-                quarter = 4;
+                quarterString = "4th Qtr";
             }
+
+            quarterConfirm.Text = quarterString;
         }
 
         private void runButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(quarter.ToString());
+            Close();
+        }
+
+        private void asofPicker_ValueChanged(object sender, EventArgs e)
+        {
+            asofString = asofPicker.Value.ToLongDateString();
+            
+            asofConfirm.Text = asofString;
         }
     }
 }
