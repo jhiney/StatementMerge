@@ -114,12 +114,15 @@ namespace StatementMerge
             // 
             // runButton
             // 
-            this.runButton.Location = new System.Drawing.Point(486, 153);
+            this.runButton.BackColor = System.Drawing.Color.Maroon;
+            this.runButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.runButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.runButton.Location = new System.Drawing.Point(701, 144);
             this.runButton.Name = "runButton";
-            this.runButton.Size = new System.Drawing.Size(115, 23);
+            this.runButton.Size = new System.Drawing.Size(115, 32);
             this.runButton.TabIndex = 8;
             this.runButton.Text = "Run";
-            this.runButton.UseVisualStyleBackColor = true;
+            this.runButton.UseVisualStyleBackColor = false;
             this.runButton.Click += new System.EventHandler(this.runButton_Click);
             // 
             // groupBox1
@@ -190,7 +193,7 @@ namespace StatementMerge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 188);
+            this.ClientSize = new System.Drawing.Size(828, 188);
             this.Controls.Add(this.asofConfirm);
             this.Controls.Add(this.quarterConfirm);
             this.Controls.Add(this.asofLabel);
