@@ -142,7 +142,9 @@ namespace StatementMerge
 				body = body + account;
 			}
 
-			mailItem.HTMLBody = body + "<br/>" + ReadSignature();
+			mailItem.HTMLBody = body + 
+								"<br/>" +
+								ReadSignature();
 
 			foreach (var item in filepath)
 			{
