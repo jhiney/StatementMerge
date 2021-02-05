@@ -13,7 +13,6 @@ namespace StatementMerge
         public optionForm()
         {
             InitializeComponent();
-
         }
 
         private void radioChanged(object sender, EventArgs e)
@@ -46,13 +45,11 @@ namespace StatementMerge
         private void asofPicker_ValueChanged(object sender, EventArgs e)
         {
             asofString = asofPicker.Value.ToLongDateString();
-            
             asofConfirm.Text = asofString;
         }
 
         private void fileButton_Click(object sender, EventArgs e)
         {
-           
             OpenFileDialog fd = new OpenFileDialog();
             fd.ShowDialog();
 
@@ -61,13 +58,11 @@ namespace StatementMerge
 
         private void folderButton_Click(object sender, EventArgs e)
         {
-            string startingFolder = @"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS";
-
+           string startingFolder = @"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS";
            FolderBrowserDialog fd = new FolderBrowserDialog();
-            fd.SelectedPath = startingFolder;
+           fd.SelectedPath = startingFolder;
            fd.ShowDialog();
-
-            folderLabel.Text = fd.SelectedPath;
+           folderLabel.Text = fd.SelectedPath;
         }
     }
 }
