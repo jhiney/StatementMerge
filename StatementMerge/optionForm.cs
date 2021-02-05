@@ -7,7 +7,8 @@ namespace StatementMerge
     {
         
         public string quarterString = null;
-        public string asofString = null;
+        //Give this a default of today so that if nothing gets picked a variable is still passed and is not null.
+        public string asofString = DateTime.Today.ToLongDateString();
 
         public optionForm()
         {
