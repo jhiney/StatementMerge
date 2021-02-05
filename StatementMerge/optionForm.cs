@@ -7,7 +7,8 @@ namespace StatementMerge
     {
         
         public string quarterString = null;
-        public string asofString = null;
+        //Give this a default of today so that if nothing gets picked a variable is still passed and is not null.
+        public string asofString = DateTime.Today.ToLongDateString();
 
         public optionForm()
         {
@@ -44,8 +45,24 @@ namespace StatementMerge
         private void asofPicker_ValueChanged(object sender, EventArgs e)
         {
             asofString = asofPicker.Value.ToLongDateString();
-            
             asofConfirm.Text = asofString;
+        }
+
+        private void fileButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.ShowDialog();
+
+            fileLabel.Text = fd.FileName;
+        }
+
+        private void folderButton_Click(object sender, EventArgs e)
+        {
+           string startingFolder = @"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS";
+           FolderBrowserDialog fd = new FolderBrowserDialog();
+           fd.SelectedPath = startingFolder;
+           fd.ShowDialog();
+           folderLabel.Text = fd.SelectedPath;
         }
     }
 }

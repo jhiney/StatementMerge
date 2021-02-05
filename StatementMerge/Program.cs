@@ -14,12 +14,12 @@ namespace StatementMerge
     //The file path in the GetPath() and GetPaths() methods, should be 2 changes.
     //Change the subject & body in both createMailItem methods so that it reflects the accurate as of date.
 
-    //TODO: add a console readline to read in the "as of date"
+    //TODO:
     //Create variable for that paths so I only have to change it once
     //Have it skip the accounts in the CSV that do not have a match and output them to the console
-    //Maybe give the whole thing a user interface?
     class Program
 	{
+
 		[STAThread]
 		static void Main(string[] args)
 		{
@@ -32,6 +32,11 @@ namespace StatementMerge
 
 			optionForm oform = new optionForm();
 			oform.ShowDialog();
+
+			string asofstring = oform.asofString;
+
+			string qtrabr = oform.quarterString;
+
 
 			InitialTable = program.csvToDataTable();
 			MatchTable = program.MatcherTable(InitialTable);
@@ -63,7 +68,7 @@ namespace StatementMerge
 					designation = "0" + designation;
 				}
 				
-				program.CreateMailItem(email, recip, entity, program.GetPath(designation));
+				program.CreateMailItem(email, recip, entity, program.GetPath(designation),asofstring);
 
 			}
 			
@@ -100,7 +105,7 @@ namespace StatementMerge
 					if (i == MatchTable.Rows.Count-1)
 					{
 						string sendEmail = distinctEmail[j];
-						program.CreateMultipleMailItem(sendEmail, sendName, accounts, program.GetPaths(paths));
+						program.CreateMultipleMailItem(sendEmail, sendName, accounts, program.GetPaths(paths), asofstring);
 						j = j+1;
 					}	
 				}
@@ -126,7 +131,7 @@ namespace StatementMerge
 		//	mailItem.UnRead = true;
 		//}
 
-		private void CreateMultipleMailItem(string subject, string recipient, List<string> accounts, List<string> filepath)
+		private void CreateMultipleMailItem(string subject, string recipient, List<string> accounts, List<string> filepath, string asof)
 		{
 			Outlook.Application app = new Outlook.Application();
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
@@ -134,7 +139,7 @@ namespace StatementMerge
 			mailItem.Subject = "2020 Q2 Quarterly Statements";
 			mailItem.To = subject;
 			
-			string body = recipient + ", <br/> Attached is the quarterly statement for period ended December 31, 2020 for the following accounts: <br/>";
+			string body = recipient + ", <br/> Attached is the quarterly statement for period ended " +asof+ " for the following accounts: <br/>";
 
 			foreach (var item in accounts)
 			{
@@ -159,7 +164,7 @@ namespace StatementMerge
 			mailItem.UnRead = true;
 		}
 
-		private void CreateMailItem(string subject, string recipient, string account, string filepath)
+		private void CreateMailItem(string subject, string recipient, string account, string filepath, string asof)
 		{
 			Outlook.Application app = new Outlook.Application();
 
@@ -168,7 +173,7 @@ namespace StatementMerge
 			mailItem.Subject = account + "2020 Q2 Quarterly Statements";
 			mailItem.To = subject;
 			//<br/> is a html line break
-			string body = recipient + ", <br/> Attached is the quarterly statement for period ended December 31, 2020 for the " + account + " account. Please let me know if you have any questions or concerns. <br/>";
+			string body = recipient + ", <br/> Attached is the quarterly statement for period ended "+asof+" for the " + account + " account. Please let me know if you have any questions or concerns. <br/>";
 
 			mailItem.HTMLBody = body + ReadSignature();
 

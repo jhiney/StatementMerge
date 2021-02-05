@@ -43,6 +43,10 @@ namespace StatementMerge
             this.asofLabel = new System.Windows.Forms.Label();
             this.quarterConfirm = new System.Windows.Forms.Label();
             this.asofConfirm = new System.Windows.Forms.Label();
+            this.folderButton = new System.Windows.Forms.Button();
+            this.fileButton = new System.Windows.Forms.Button();
+            this.fileLabel = new System.Windows.Forms.Label();
+            this.folderLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,7 +121,7 @@ namespace StatementMerge
             this.runButton.BackColor = System.Drawing.Color.Maroon;
             this.runButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.runButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.runButton.Location = new System.Drawing.Point(701, 144);
+            this.runButton.Location = new System.Drawing.Point(701, 12);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(115, 32);
             this.runButton.TabIndex = 8;
@@ -189,11 +193,51 @@ namespace StatementMerge
             this.asofConfirm.Size = new System.Drawing.Size(0, 13);
             this.asofConfirm.TabIndex = 15;
             // 
+            // folderButton
+            // 
+            this.folderButton.Location = new System.Drawing.Point(165, 110);
+            this.folderButton.Name = "folderButton";
+            this.folderButton.Size = new System.Drawing.Size(75, 23);
+            this.folderButton.TabIndex = 16;
+            this.folderButton.Text = "Folder";
+            this.folderButton.UseVisualStyleBackColor = true;
+            this.folderButton.Click += new System.EventHandler(this.folderButton_Click);
+            // 
+            // fileButton
+            // 
+            this.fileButton.Location = new System.Drawing.Point(165, 140);
+            this.fileButton.Name = "fileButton";
+            this.fileButton.Size = new System.Drawing.Size(75, 23);
+            this.fileButton.TabIndex = 17;
+            this.fileButton.Text = "File";
+            this.fileButton.UseVisualStyleBackColor = true;
+            this.fileButton.Click += new System.EventHandler(this.fileButton_Click);
+            // 
+            // fileLabel
+            // 
+            this.fileLabel.AutoSize = true;
+            this.fileLabel.Location = new System.Drawing.Point(247, 144);
+            this.fileLabel.Name = "fileLabel";
+            this.fileLabel.Size = new System.Drawing.Size(0, 13);
+            this.fileLabel.TabIndex = 18;
+            // 
+            // folderLabel
+            // 
+            this.folderLabel.AutoSize = true;
+            this.folderLabel.Location = new System.Drawing.Point(247, 119);
+            this.folderLabel.Name = "folderLabel";
+            this.folderLabel.Size = new System.Drawing.Size(0, 13);
+            this.folderLabel.TabIndex = 19;
+            // 
             // optionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 188);
+            this.Controls.Add(this.folderLabel);
+            this.Controls.Add(this.fileLabel);
+            this.Controls.Add(this.fileButton);
+            this.Controls.Add(this.folderButton);
             this.Controls.Add(this.asofConfirm);
             this.Controls.Add(this.quarterConfirm);
             this.Controls.Add(this.asofLabel);
@@ -228,5 +272,9 @@ namespace StatementMerge
         private System.Windows.Forms.Label asofLabel;
         private System.Windows.Forms.Label quarterConfirm;
         private System.Windows.Forms.Label asofConfirm;
+        private System.Windows.Forms.Button folderButton;
+        private System.Windows.Forms.Button fileButton;
+        private System.Windows.Forms.Label fileLabel;
+        private System.Windows.Forms.Label folderLabel;
     }
 }
