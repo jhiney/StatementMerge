@@ -61,8 +61,11 @@ namespace StatementMerge
 
         private void folderButton_Click(object sender, EventArgs e)
         {
+            string startingFolder = @"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS";
+
            FolderBrowserDialog fd = new FolderBrowserDialog();
-            fd.ShowDialog();
+            fd.SelectedPath = startingFolder;
+           fd.ShowDialog();
 
             folderLabel.Text = fd.SelectedPath;
         }
