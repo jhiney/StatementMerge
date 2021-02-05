@@ -14,10 +14,9 @@ namespace StatementMerge
     //The file path in the GetPath() and GetPaths() methods, should be 2 changes.
     //Change the subject & body in both createMailItem methods so that it reflects the accurate as of date.
 
-    //TODO: add a console readline to read in the "as of date"
+    //TODO:
     //Create variable for that paths so I only have to change it once
     //Have it skip the accounts in the CSV that do not have a match and output them to the console
-    //Maybe give the whole thing a user interface?
     class Program
 	{
 		[STAThread]
