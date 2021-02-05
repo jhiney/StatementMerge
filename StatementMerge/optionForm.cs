@@ -13,6 +13,7 @@ namespace StatementMerge
         public optionForm()
         {
             InitializeComponent();
+
         }
 
         private void radioChanged(object sender, EventArgs e)
@@ -47,6 +48,23 @@ namespace StatementMerge
             asofString = asofPicker.Value.ToLongDateString();
             
             asofConfirm.Text = asofString;
+        }
+
+        private void fileButton_Click(object sender, EventArgs e)
+        {
+           
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.ShowDialog();
+
+            fileLabel.Text = fd.FileName;
+        }
+
+        private void folderButton_Click(object sender, EventArgs e)
+        {
+           FolderBrowserDialog fd = new FolderBrowserDialog();
+            fd.ShowDialog();
+
+            folderLabel.Text = fd.SelectedPath;
         }
     }
 }
