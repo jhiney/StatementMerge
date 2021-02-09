@@ -35,7 +35,7 @@ namespace StatementMerge
 
 			string asofstring = oform.asofString;
 
-			string qtrabr = oform.quarterString;
+			string subjectString = oform.subjectString;
 
 
 			InitialTable = program.csvToDataTable();
@@ -68,7 +68,7 @@ namespace StatementMerge
 					designation = "0" + designation;
 				}
 				
-				program.CreateMailItem(email, recip, entity, program.GetPath(designation),asofstring);
+				program.CreateMailItem(email, recip, entity, program.GetPath(designation),asofstring, subjectString);
 
 			}
 			
@@ -105,7 +105,7 @@ namespace StatementMerge
 					if (i == MatchTable.Rows.Count-1)
 					{
 						string sendEmail = distinctEmail[j];
-						program.CreateMultipleMailItem(sendEmail, sendName, accounts, program.GetPaths(paths), asofstring);
+						program.CreateMultipleMailItem(sendEmail, sendName, accounts, program.GetPaths(paths), asofstring, subjectString);
 						j = j+1;
 					}	
 				}
@@ -131,12 +131,12 @@ namespace StatementMerge
 		//	mailItem.UnRead = true;
 		//}
 
-		private void CreateMultipleMailItem(string subject, string recipient, List<string> accounts, List<string> filepath, string asof)
+		private void CreateMultipleMailItem(string subject, string recipient, List<string> accounts, List<string> filepath, string asof, string title)
 		{
 			Outlook.Application app = new Outlook.Application();
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 			
-			mailItem.Subject = "2020 Q2 Quarterly Statements";
+			mailItem.Subject = title + " Quarterly Statements";
 			mailItem.To = subject;
 			
 			string body = recipient + ", <br/> Attached is the quarterly statement for period ended " +asof+ " for the following accounts: <br/>";
@@ -164,13 +164,13 @@ namespace StatementMerge
 			mailItem.UnRead = true;
 		}
 
-		private void CreateMailItem(string subject, string recipient, string account, string filepath, string asof)
+		private void CreateMailItem(string subject, string recipient, string account, string filepath, string asof, string title)
 		{
 			Outlook.Application app = new Outlook.Application();
 
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 
-			mailItem.Subject = account + "2020 Q2 Quarterly Statements";
+			mailItem.Subject = account + " "+ title+" Quarterly Statements";
 			mailItem.To = subject;
 			//<br/> is a html line break
 			string body = recipient + ", <br/> Attached is the quarterly statement for period ended "+asof+" for the " + account + " account. Please let me know if you have any questions or concerns. <br/>";
