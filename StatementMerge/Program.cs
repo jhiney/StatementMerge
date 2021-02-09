@@ -37,8 +37,12 @@ namespace StatementMerge
 
 			string subjectString = oform.subjectString;
 
+			string qtrFolder = oform.statementFolder;
 
-			InitialTable = program.csvToDataTable();
+			string csvFile = oform.listFile;
+
+
+			InitialTable = program.csvToDataTable(csvFile);
 			MatchTable = program.MatcherTable(InitialTable);
 
 			//This loop deletes any entires with a duplicate email from table
@@ -68,7 +72,7 @@ namespace StatementMerge
 					designation = "0" + designation;
 				}
 				
-				program.CreateMailItem(email, recip, entity, program.GetPath(designation),asofstring, subjectString);
+				program.CreateMailItem(email, recip, entity, program.GetPath(designation,qtrFolder),asofstring, subjectString);
 
 			}
 			
@@ -105,7 +109,7 @@ namespace StatementMerge
 					if (i == MatchTable.Rows.Count-1)
 					{
 						string sendEmail = distinctEmail[j];
-						program.CreateMultipleMailItem(sendEmail, sendName, accounts, program.GetPaths(paths), asofstring, subjectString);
+						program.CreateMultipleMailItem(sendEmail, sendName, accounts, program.GetPaths(paths, qtrFolder), asofstring, subjectString);
 						j = j+1;
 					}	
 				}
@@ -186,17 +190,19 @@ namespace StatementMerge
 			mailItem.Save();
 			mailItem.UnRead = true;
 		}
-		private string uploadcsv()
+
+		//private string uploadcsv()
+		//{
+		//	string fileName;
+		//	OpenFileDialog fd = new OpenFileDialog();
+		//	fd.ShowDialog();
+		//	fileName = fd.FileName;
+		//	return fileName;
+		//}
+
+		private DataTable csvToDataTable(string file)
 		{
-			string fileName;
-			OpenFileDialog fd = new OpenFileDialog();
-			fd.ShowDialog();
-			fileName = fd.FileName;
-			return fileName;
-		}
-		private DataTable csvToDataTable()
-		{
-			StreamReader sr = new StreamReader(uploadcsv());
+			StreamReader sr = new StreamReader(file);
 			string myStringRow = sr.ReadLine();
 			var rows = myStringRow.Split(',');
 			DataTable CsvData = new DataTable();
@@ -231,12 +237,12 @@ namespace StatementMerge
 		}
 
 		//THis is for people who have a singular statement
-		private string GetPath(string designation)
+		private string GetPath(string designation, string folder)
 		{
 			string path = null;
 
 			string partialName = designation;
-			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\2nd Qtr");
+			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(folder);
 			FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 			foreach (FileInfo foundFile in filesInDir)
@@ -250,14 +256,14 @@ namespace StatementMerge
 		}
 
 		//This is for people who have multiple statements going to them
-		private List<string> GetPaths(List<string> designation)
+		private List<string> GetPaths(List<string> designation, string folder)
 		{
 			List<string> path = new List<string>();
 
 			foreach (var item in designation)
 			{
 				string partialName = item;
-				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\2nd Qtr");
+				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(folder);
 				FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 				foreach (FileInfo foundFile in filesInDir)
