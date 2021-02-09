@@ -46,6 +46,8 @@ namespace StatementMerge
             this.fileButton = new System.Windows.Forms.Button();
             this.fileLabel = new System.Windows.Forms.Label();
             this.folderLabel = new System.Windows.Forms.Label();
+            this.fiscalYearBox = new System.Windows.Forms.TextBox();
+            this.fyLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +123,8 @@ namespace StatementMerge
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.fyLabel);
+            this.groupBox1.Controls.Add(this.fiscalYearBox);
             this.groupBox1.Controls.Add(this.secondButton);
             this.groupBox1.Controls.Add(this.firstButton);
             this.groupBox1.Controls.Add(this.thirdButton);
@@ -219,6 +223,23 @@ namespace StatementMerge
             this.folderLabel.Size = new System.Drawing.Size(0, 13);
             this.folderLabel.TabIndex = 19;
             // 
+            // fiscalYearBox
+            // 
+            this.fiscalYearBox.Location = new System.Drawing.Point(60, 54);
+            this.fiscalYearBox.Name = "fiscalYearBox";
+            this.fiscalYearBox.Size = new System.Drawing.Size(68, 20);
+            this.fiscalYearBox.TabIndex = 5;
+            this.fiscalYearBox.TextChanged += new System.EventHandler(this.fiscalYearBox_TextChanged);
+            // 
+            // fyLabel
+            // 
+            this.fyLabel.AutoSize = true;
+            this.fyLabel.Location = new System.Drawing.Point(60, 34);
+            this.fyLabel.Name = "fyLabel";
+            this.fyLabel.Size = new System.Drawing.Size(59, 13);
+            this.fyLabel.TabIndex = 6;
+            this.fyLabel.Text = "Fiscal Year";
+            // 
             // optionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,5 +285,7 @@ namespace StatementMerge
         private System.Windows.Forms.Button fileButton;
         private System.Windows.Forms.Label fileLabel;
         private System.Windows.Forms.Label folderLabel;
+        private System.Windows.Forms.TextBox fiscalYearBox;
+        private System.Windows.Forms.Label fyLabel;
     }
 }

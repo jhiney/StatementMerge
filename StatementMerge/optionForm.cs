@@ -10,6 +10,8 @@ namespace StatementMerge
         //Give this a default of today so that if nothing gets picked a variable is still passed and is not null.
         public string asofString = DateTime.Today.ToLongDateString();
 
+        public string fiscalYear = DateTime.Today.Year.ToString();
+
         public string statementFolder = null;
 
         public string listFile = null;
@@ -71,6 +73,11 @@ namespace StatementMerge
            folderLabel.Text = fd.SelectedPath;
 
             statementFolder = fd.SelectedPath;
+        }
+
+        private void fiscalYearBox_TextChanged(object sender, EventArgs e)
+        {
+            fiscalYear = fiscalYearBox.Text;
         }
     }
 }
