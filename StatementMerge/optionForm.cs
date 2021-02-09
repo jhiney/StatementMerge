@@ -10,6 +10,10 @@ namespace StatementMerge
         //Give this a default of today so that if nothing gets picked a variable is still passed and is not null.
         public string asofString = DateTime.Today.ToLongDateString();
 
+        public string statementFolder = null;
+
+        public string listFile = null;
+
         public optionForm()
         {
             InitializeComponent();
@@ -54,6 +58,8 @@ namespace StatementMerge
             fd.ShowDialog();
 
             fileLabel.Text = fd.FileName;
+
+            listFile = fd.FileName;
         }
 
         private void folderButton_Click(object sender, EventArgs e)
@@ -63,6 +69,8 @@ namespace StatementMerge
            fd.SelectedPath = startingFolder;
            fd.ShowDialog();
            folderLabel.Text = fd.SelectedPath;
+
+            statementFolder = fd.SelectedPath;
         }
     }
 }
