@@ -35,10 +35,14 @@ namespace StatementMerge
 
 			string asofstring = oform.asofString;
 
-			string qtrabr = oform.quarterString;
+			string subjectString = oform.subjectString;
+
+			string qtrFolder = oform.statementFolder;
+
+			string csvFile = oform.listFile;
 
 
-			InitialTable = program.csvToDataTable();
+			InitialTable = program.csvToDataTable(csvFile);
 			MatchTable = program.MatcherTable(InitialTable);
 
 			//This loop deletes any entires with a duplicate email from table
@@ -68,7 +72,7 @@ namespace StatementMerge
 					designation = "0" + designation;
 				}
 				
-				program.CreateMailItem(email, recip, entity, program.GetPath(designation),asofstring);
+				program.CreateMailItem(email, recip, entity, program.GetPath(designation,qtrFolder),asofstring, subjectString);
 
 			}
 			
@@ -105,7 +109,7 @@ namespace StatementMerge
 					if (i == MatchTable.Rows.Count-1)
 					{
 						string sendEmail = distinctEmail[j];
-						program.CreateMultipleMailItem(sendEmail, sendName, accounts, program.GetPaths(paths), asofstring);
+						program.CreateMultipleMailItem(sendEmail, sendName, accounts, program.GetPaths(paths, qtrFolder), asofstring, subjectString);
 						j = j+1;
 					}	
 				}
@@ -131,12 +135,12 @@ namespace StatementMerge
 		//	mailItem.UnRead = true;
 		//}
 
-		private void CreateMultipleMailItem(string subject, string recipient, List<string> accounts, List<string> filepath, string asof)
+		private void CreateMultipleMailItem(string subject, string recipient, List<string> accounts, List<string> filepath, string asof, string title)
 		{
 			Outlook.Application app = new Outlook.Application();
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 			
-			mailItem.Subject = "2020 Q2 Quarterly Statements";
+			mailItem.Subject = title + " Quarterly Statements";
 			mailItem.To = subject;
 			
 			string body = recipient + ", <br/> Attached is the quarterly statement for period ended " +asof+ " for the following accounts: <br/>";
@@ -164,13 +168,13 @@ namespace StatementMerge
 			mailItem.UnRead = true;
 		}
 
-		private void CreateMailItem(string subject, string recipient, string account, string filepath, string asof)
+		private void CreateMailItem(string subject, string recipient, string account, string filepath, string asof, string title)
 		{
 			Outlook.Application app = new Outlook.Application();
 
 			Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
 
-			mailItem.Subject = account + "2020 Q2 Quarterly Statements";
+			mailItem.Subject = account + " "+ title+" Quarterly Statements";
 			mailItem.To = subject;
 			//<br/> is a html line break
 			string body = recipient + ", <br/> Attached is the quarterly statement for period ended "+asof+" for the " + account + " account. Please let me know if you have any questions or concerns. <br/>";
@@ -186,17 +190,19 @@ namespace StatementMerge
 			mailItem.Save();
 			mailItem.UnRead = true;
 		}
-		private string uploadcsv()
+
+		//private string uploadcsv()
+		//{
+		//	string fileName;
+		//	OpenFileDialog fd = new OpenFileDialog();
+		//	fd.ShowDialog();
+		//	fileName = fd.FileName;
+		//	return fileName;
+		//}
+
+		private DataTable csvToDataTable(string file)
 		{
-			string fileName;
-			OpenFileDialog fd = new OpenFileDialog();
-			fd.ShowDialog();
-			fileName = fd.FileName;
-			return fileName;
-		}
-		private DataTable csvToDataTable()
-		{
-			StreamReader sr = new StreamReader(uploadcsv());
+			StreamReader sr = new StreamReader(file);
 			string myStringRow = sr.ReadLine();
 			var rows = myStringRow.Split(',');
 			DataTable CsvData = new DataTable();
@@ -231,12 +237,12 @@ namespace StatementMerge
 		}
 
 		//THis is for people who have a singular statement
-		private string GetPath(string designation)
+		private string GetPath(string designation, string folder)
 		{
 			string path = null;
 
 			string partialName = designation;
-			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\2nd Qtr");
+			DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(folder);
 			FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 			foreach (FileInfo foundFile in filesInDir)
@@ -250,14 +256,14 @@ namespace StatementMerge
 		}
 
 		//This is for people who have multiple statements going to them
-		private List<string> GetPaths(List<string> designation)
+		private List<string> GetPaths(List<string> designation, string folder)
 		{
 			List<string> path = new List<string>();
 
 			foreach (var item in designation)
 			{
 				string partialName = item;
-				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"K:\ACCTING\GENERAL\Qtrly and Annual Forms\Statements\QUARTERLY STATEMENTS\2020-2021\2nd Qtr");
+				DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(folder);
 				FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
 
 				foreach (FileInfo foundFile in filesInDir)

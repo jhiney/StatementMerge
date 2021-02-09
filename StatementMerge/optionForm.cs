@@ -6,9 +6,19 @@ namespace StatementMerge
     public partial class optionForm : Form
     {
         
-        public string quarterString = null;
+        
         //Give this a default of today so that if nothing gets picked a variable is still passed and is not null.
         public string asofString = DateTime.Today.ToLongDateString();
+
+        //Quarter string and fiscalYear combine to form subjectString
+        public string quarterString = null;
+        public string fiscalYear = DateTime.Today.Year.ToString();
+
+        public string subjectString = null;
+
+        public string statementFolder = null;
+
+        public string listFile = null;
 
         public optionForm()
         {
@@ -19,22 +29,23 @@ namespace StatementMerge
         {
             if(firstButton.Checked)
             {
-                quarterString = "1st Qtr";
+                quarterString = "Q1";
             }
             if(secondButton.Checked)
             {
-                quarterString = "2nd Qtr";
+                quarterString = "Q2";
             }
             if(thirdButton.Checked)
             {
-                quarterString = "3rd Qtr";
+                quarterString = "Q3";
             }
             if(fourthButton.Checked)
             {
-                quarterString = "4th Qtr";
+                quarterString = "Q4";
             }
 
-            quarterConfirm.Text = quarterString;
+            subjectString = fiscalYear + " " + quarterString;
+            quarterConfirm.Text = subjectString;
         }
 
         private void runButton_Click(object sender, EventArgs e)
@@ -54,6 +65,8 @@ namespace StatementMerge
             fd.ShowDialog();
 
             fileLabel.Text = fd.FileName;
+
+            listFile = fd.FileName;
         }
 
         private void folderButton_Click(object sender, EventArgs e)
@@ -63,6 +76,15 @@ namespace StatementMerge
            fd.SelectedPath = startingFolder;
            fd.ShowDialog();
            folderLabel.Text = fd.SelectedPath;
+
+            statementFolder = fd.SelectedPath;
+        }
+
+        private void fiscalYearBox_TextChanged(object sender, EventArgs e)
+        {
+            fiscalYear = fiscalYearBox.Text;
+            subjectString = fiscalYear + " " + quarterString;
+            quarterConfirm.Text = subjectString;
         }
     }
 }

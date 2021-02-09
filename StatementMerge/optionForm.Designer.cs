@@ -33,7 +33,6 @@ namespace StatementMerge
             this.secondButton = new System.Windows.Forms.RadioButton();
             this.fourthButton = new System.Windows.Forms.RadioButton();
             this.thirdButton = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.runButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -47,6 +46,8 @@ namespace StatementMerge
             this.fileButton = new System.Windows.Forms.Button();
             this.fileLabel = new System.Windows.Forms.Label();
             this.folderLabel = new System.Windows.Forms.Label();
+            this.fiscalYearBox = new System.Windows.Forms.TextBox();
+            this.fyLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,10 +56,10 @@ namespace StatementMerge
             this.firstButton.AutoSize = true;
             this.firstButton.Location = new System.Drawing.Point(0, 27);
             this.firstButton.Name = "firstButton";
-            this.firstButton.Size = new System.Drawing.Size(77, 17);
+            this.firstButton.Size = new System.Drawing.Size(39, 17);
             this.firstButton.TabIndex = 1;
             this.firstButton.TabStop = true;
-            this.firstButton.Text = "1st Quarter";
+            this.firstButton.Text = "Q1";
             this.firstButton.UseVisualStyleBackColor = true;
             this.firstButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
@@ -67,10 +68,10 @@ namespace StatementMerge
             this.secondButton.AutoSize = true;
             this.secondButton.Location = new System.Drawing.Point(0, 51);
             this.secondButton.Name = "secondButton";
-            this.secondButton.Size = new System.Drawing.Size(81, 17);
+            this.secondButton.Size = new System.Drawing.Size(39, 17);
             this.secondButton.TabIndex = 2;
             this.secondButton.TabStop = true;
-            this.secondButton.Text = "2nd Quarter";
+            this.secondButton.Text = "Q2";
             this.secondButton.UseVisualStyleBackColor = true;
             this.secondButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
@@ -79,10 +80,10 @@ namespace StatementMerge
             this.fourthButton.AutoSize = true;
             this.fourthButton.Location = new System.Drawing.Point(0, 98);
             this.fourthButton.Name = "fourthButton";
-            this.fourthButton.Size = new System.Drawing.Size(78, 17);
+            this.fourthButton.Size = new System.Drawing.Size(39, 17);
             this.fourthButton.TabIndex = 4;
             this.fourthButton.TabStop = true;
-            this.fourthButton.Text = "4th Quarter";
+            this.fourthButton.Text = "Q4";
             this.fourthButton.UseVisualStyleBackColor = true;
             this.fourthButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
@@ -91,21 +92,12 @@ namespace StatementMerge
             this.thirdButton.AutoSize = true;
             this.thirdButton.Location = new System.Drawing.Point(0, 74);
             this.thirdButton.Name = "thirdButton";
-            this.thirdButton.Size = new System.Drawing.Size(78, 17);
+            this.thirdButton.Size = new System.Drawing.Size(39, 17);
             this.thirdButton.TabIndex = 3;
             this.thirdButton.TabStop = true;
-            this.thirdButton.Text = "3rd Quarter";
+            this.thirdButton.Text = "Q3";
             this.thirdButton.UseVisualStyleBackColor = true;
             this.thirdButton.CheckedChanged += new System.EventHandler(this.radioChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Please Select a Quarter";
             // 
             // label2
             // 
@@ -131,16 +123,18 @@ namespace StatementMerge
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.fyLabel);
+            this.groupBox1.Controls.Add(this.fiscalYearBox);
             this.groupBox1.Controls.Add(this.secondButton);
             this.groupBox1.Controls.Add(this.firstButton);
             this.groupBox1.Controls.Add(this.thirdButton);
             this.groupBox1.Controls.Add(this.fourthButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 46);
+            this.groupBox1.Location = new System.Drawing.Point(12, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(87, 127);
+            this.groupBox1.Size = new System.Drawing.Size(147, 127);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Please Select a Quarter";
             // 
             // asofPicker
             // 
@@ -195,7 +189,7 @@ namespace StatementMerge
             // 
             // folderButton
             // 
-            this.folderButton.Location = new System.Drawing.Point(165, 110);
+            this.folderButton.Location = new System.Drawing.Point(165, 71);
             this.folderButton.Name = "folderButton";
             this.folderButton.Size = new System.Drawing.Size(75, 23);
             this.folderButton.TabIndex = 16;
@@ -205,7 +199,7 @@ namespace StatementMerge
             // 
             // fileButton
             // 
-            this.fileButton.Location = new System.Drawing.Point(165, 140);
+            this.fileButton.Location = new System.Drawing.Point(165, 101);
             this.fileButton.Name = "fileButton";
             this.fileButton.Size = new System.Drawing.Size(75, 23);
             this.fileButton.TabIndex = 17;
@@ -216,7 +210,7 @@ namespace StatementMerge
             // fileLabel
             // 
             this.fileLabel.AutoSize = true;
-            this.fileLabel.Location = new System.Drawing.Point(247, 144);
+            this.fileLabel.Location = new System.Drawing.Point(247, 105);
             this.fileLabel.Name = "fileLabel";
             this.fileLabel.Size = new System.Drawing.Size(0, 13);
             this.fileLabel.TabIndex = 18;
@@ -224,10 +218,27 @@ namespace StatementMerge
             // folderLabel
             // 
             this.folderLabel.AutoSize = true;
-            this.folderLabel.Location = new System.Drawing.Point(247, 119);
+            this.folderLabel.Location = new System.Drawing.Point(247, 80);
             this.folderLabel.Name = "folderLabel";
             this.folderLabel.Size = new System.Drawing.Size(0, 13);
             this.folderLabel.TabIndex = 19;
+            // 
+            // fiscalYearBox
+            // 
+            this.fiscalYearBox.Location = new System.Drawing.Point(60, 54);
+            this.fiscalYearBox.Name = "fiscalYearBox";
+            this.fiscalYearBox.Size = new System.Drawing.Size(68, 20);
+            this.fiscalYearBox.TabIndex = 5;
+            this.fiscalYearBox.TextChanged += new System.EventHandler(this.fiscalYearBox_TextChanged);
+            // 
+            // fyLabel
+            // 
+            this.fyLabel.AutoSize = true;
+            this.fyLabel.Location = new System.Drawing.Point(60, 34);
+            this.fyLabel.Name = "fyLabel";
+            this.fyLabel.Size = new System.Drawing.Size(59, 13);
+            this.fyLabel.TabIndex = 6;
+            this.fyLabel.Text = "Fiscal Year";
             // 
             // optionForm
             // 
@@ -247,7 +258,6 @@ namespace StatementMerge
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "optionForm";
             this.Text = "Quarterly Statement Options";
             this.groupBox1.ResumeLayout(false);
@@ -262,7 +272,6 @@ namespace StatementMerge
         private System.Windows.Forms.RadioButton secondButton;
         private System.Windows.Forms.RadioButton fourthButton;
         private System.Windows.Forms.RadioButton thirdButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button runButton;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -276,5 +285,7 @@ namespace StatementMerge
         private System.Windows.Forms.Button fileButton;
         private System.Windows.Forms.Label fileLabel;
         private System.Windows.Forms.Label folderLabel;
+        private System.Windows.Forms.TextBox fiscalYearBox;
+        private System.Windows.Forms.Label fyLabel;
     }
 }
