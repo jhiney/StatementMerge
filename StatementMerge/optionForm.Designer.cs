@@ -185,7 +185,7 @@ namespace StatementMerge
             // 
             // folderButton
             // 
-            this.folderButton.Location = new System.Drawing.Point(165, 110);
+            this.folderButton.Location = new System.Drawing.Point(165, 71);
             this.folderButton.Name = "folderButton";
             this.folderButton.Size = new System.Drawing.Size(75, 23);
             this.folderButton.TabIndex = 16;
@@ -195,7 +195,7 @@ namespace StatementMerge
             // 
             // fileButton
             // 
-            this.fileButton.Location = new System.Drawing.Point(165, 140);
+            this.fileButton.Location = new System.Drawing.Point(165, 101);
             this.fileButton.Name = "fileButton";
             this.fileButton.Size = new System.Drawing.Size(75, 23);
             this.fileButton.TabIndex = 17;
@@ -206,7 +206,7 @@ namespace StatementMerge
             // fileLabel
             // 
             this.fileLabel.AutoSize = true;
-            this.fileLabel.Location = new System.Drawing.Point(247, 144);
+            this.fileLabel.Location = new System.Drawing.Point(247, 105);
             this.fileLabel.Name = "fileLabel";
             this.fileLabel.Size = new System.Drawing.Size(0, 13);
             this.fileLabel.TabIndex = 18;
@@ -214,7 +214,7 @@ namespace StatementMerge
             // folderLabel
             // 
             this.folderLabel.AutoSize = true;
-            this.folderLabel.Location = new System.Drawing.Point(247, 119);
+            this.folderLabel.Location = new System.Drawing.Point(247, 80);
             this.folderLabel.Name = "folderLabel";
             this.folderLabel.Size = new System.Drawing.Size(0, 13);
             this.folderLabel.TabIndex = 19;
