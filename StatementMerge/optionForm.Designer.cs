@@ -55,10 +55,10 @@ namespace StatementMerge
             this.firstButton.AutoSize = true;
             this.firstButton.Location = new System.Drawing.Point(0, 27);
             this.firstButton.Name = "firstButton";
-            this.firstButton.Size = new System.Drawing.Size(77, 17);
+            this.firstButton.Size = new System.Drawing.Size(39, 17);
             this.firstButton.TabIndex = 1;
             this.firstButton.TabStop = true;
-            this.firstButton.Text = "1st Quarter";
+            this.firstButton.Text = "Q1";
             this.firstButton.UseVisualStyleBackColor = true;
             this.firstButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
@@ -67,10 +67,10 @@ namespace StatementMerge
             this.secondButton.AutoSize = true;
             this.secondButton.Location = new System.Drawing.Point(0, 51);
             this.secondButton.Name = "secondButton";
-            this.secondButton.Size = new System.Drawing.Size(81, 17);
+            this.secondButton.Size = new System.Drawing.Size(39, 17);
             this.secondButton.TabIndex = 2;
             this.secondButton.TabStop = true;
-            this.secondButton.Text = "2nd Quarter";
+            this.secondButton.Text = "Q2";
             this.secondButton.UseVisualStyleBackColor = true;
             this.secondButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
@@ -79,10 +79,10 @@ namespace StatementMerge
             this.fourthButton.AutoSize = true;
             this.fourthButton.Location = new System.Drawing.Point(0, 98);
             this.fourthButton.Name = "fourthButton";
-            this.fourthButton.Size = new System.Drawing.Size(78, 17);
+            this.fourthButton.Size = new System.Drawing.Size(39, 17);
             this.fourthButton.TabIndex = 4;
             this.fourthButton.TabStop = true;
-            this.fourthButton.Text = "4th Quarter";
+            this.fourthButton.Text = "Q4";
             this.fourthButton.UseVisualStyleBackColor = true;
             this.fourthButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
@@ -91,10 +91,10 @@ namespace StatementMerge
             this.thirdButton.AutoSize = true;
             this.thirdButton.Location = new System.Drawing.Point(0, 74);
             this.thirdButton.Name = "thirdButton";
-            this.thirdButton.Size = new System.Drawing.Size(78, 17);
+            this.thirdButton.Size = new System.Drawing.Size(39, 17);
             this.thirdButton.TabIndex = 3;
             this.thirdButton.TabStop = true;
-            this.thirdButton.Text = "3rd Quarter";
+            this.thirdButton.Text = "Q3";
             this.thirdButton.UseVisualStyleBackColor = true;
             this.thirdButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
