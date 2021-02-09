@@ -33,7 +33,6 @@ namespace StatementMerge
             this.secondButton = new System.Windows.Forms.RadioButton();
             this.fourthButton = new System.Windows.Forms.RadioButton();
             this.thirdButton = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.runButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -98,15 +97,6 @@ namespace StatementMerge
             this.thirdButton.UseVisualStyleBackColor = true;
             this.thirdButton.CheckedChanged += new System.EventHandler(this.radioChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Please Select a Quarter";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -135,12 +125,12 @@ namespace StatementMerge
             this.groupBox1.Controls.Add(this.firstButton);
             this.groupBox1.Controls.Add(this.thirdButton);
             this.groupBox1.Controls.Add(this.fourthButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 46);
+            this.groupBox1.Location = new System.Drawing.Point(12, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(87, 127);
+            this.groupBox1.Size = new System.Drawing.Size(147, 127);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Please Select a Quarter";
             // 
             // asofPicker
             // 
@@ -247,7 +237,6 @@ namespace StatementMerge
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "optionForm";
             this.Text = "Quarterly Statement Options";
             this.groupBox1.ResumeLayout(false);
@@ -262,7 +251,6 @@ namespace StatementMerge
         private System.Windows.Forms.RadioButton secondButton;
         private System.Windows.Forms.RadioButton fourthButton;
         private System.Windows.Forms.RadioButton thirdButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button runButton;
         private System.Windows.Forms.GroupBox groupBox1;
