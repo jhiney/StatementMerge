@@ -16,8 +16,8 @@ namespace StatementMerge
 
         public string subjectString = null;
 
+        //Pick folder containing the statements and the file that contains the list of receipients.
         public string statementFolder = null;
-
         public string listFile = null;
 
         public optionForm()
@@ -63,9 +63,7 @@ namespace StatementMerge
         {
             OpenFileDialog fd = new OpenFileDialog();
             fd.ShowDialog();
-
             fileLabel.Text = fd.FileName;
-
             listFile = fd.FileName;
         }
 
