@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Windows.Forms;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +9,6 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace StatementMerge
 {
-    //Things I need to change when this runs each quarter:
-    //The file path in the GetPath() and GetPaths() methods, should be 2 changes.
-    //Change the subject & body in both createMailItem methods so that it reflects the accurate as of date.
-
-    //TODO:
-    //Create variable for that paths so I only have to change it once
-    //Have it skip the accounts in the CSV that do not have a match and output them to the console
     class Program
 	{
 
@@ -40,7 +32,6 @@ namespace StatementMerge
 			string qtrFolder = oform.statementFolder;
 
 			string csvFile = oform.listFile;
-
 
 			InitialTable = program.csvToDataTable(csvFile);
 			MatchTable = program.MatcherTable(InitialTable);
