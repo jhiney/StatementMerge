@@ -166,6 +166,8 @@ namespace StatementMerge
 			mailItem.Importance = Outlook.OlImportance.olImportanceLow;
 			mailItem.Save();
 			mailItem.UnRead = true;
+
+			Console.WriteLine("Mail Item created for: " + recipient + ", Email: " + subject);
 		}
 
 		private void CreateMailItem(string subject, string recipient, string account, string filepath, string asof, string title)
@@ -189,6 +191,8 @@ namespace StatementMerge
 			mailItem.Importance = Outlook.OlImportance.olImportanceLow;
 			mailItem.Save();
 			mailItem.UnRead = true;
+
+			Console.WriteLine("Mail Item created for: " + recipient + ", Email: " + subject);
 		}
 
 		//private string uploadcsv()
