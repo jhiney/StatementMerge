@@ -17,3 +17,4 @@ On the right side of the form you will see text confirming your selections. You 
 * Add a email preview to the form
 * Add a pop up that shows recipients and what attachments they are receiving
 * Add something that pops up that lets you know if there are statements in the Folder that aren't assigned to a recipient.
+* Fuzzy matching
