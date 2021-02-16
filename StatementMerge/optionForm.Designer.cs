@@ -36,6 +36,8 @@ namespace StatementMerge
             this.label2 = new System.Windows.Forms.Label();
             this.runButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.fyLabel = new System.Windows.Forms.Label();
+            this.fiscalYearBox = new System.Windows.Forms.TextBox();
             this.asofPicker = new System.Windows.Forms.DateTimePicker();
             this.confirmationLabel = new System.Windows.Forms.Label();
             this.quarterLabel = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@ namespace StatementMerge
             this.fileButton = new System.Windows.Forms.Button();
             this.fileLabel = new System.Windows.Forms.Label();
             this.folderLabel = new System.Windows.Forms.Label();
-            this.fiscalYearBox = new System.Windows.Forms.TextBox();
-            this.fyLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +136,23 @@ namespace StatementMerge
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Please Select a Quarter";
             // 
+            // fyLabel
+            // 
+            this.fyLabel.AutoSize = true;
+            this.fyLabel.Location = new System.Drawing.Point(60, 34);
+            this.fyLabel.Name = "fyLabel";
+            this.fyLabel.Size = new System.Drawing.Size(59, 13);
+            this.fyLabel.TabIndex = 6;
+            this.fyLabel.Text = "Fiscal Year";
+            // 
+            // fiscalYearBox
+            // 
+            this.fiscalYearBox.Location = new System.Drawing.Point(60, 54);
+            this.fiscalYearBox.Name = "fiscalYearBox";
+            this.fiscalYearBox.Size = new System.Drawing.Size(68, 20);
+            this.fiscalYearBox.TabIndex = 5;
+            this.fiscalYearBox.TextChanged += new System.EventHandler(this.fiscalYearBox_TextChanged);
+            // 
             // asofPicker
             // 
             this.asofPicker.Location = new System.Drawing.Point(165, 36);
@@ -222,23 +239,6 @@ namespace StatementMerge
             this.folderLabel.Name = "folderLabel";
             this.folderLabel.Size = new System.Drawing.Size(0, 13);
             this.folderLabel.TabIndex = 19;
-            // 
-            // fiscalYearBox
-            // 
-            this.fiscalYearBox.Location = new System.Drawing.Point(60, 54);
-            this.fiscalYearBox.Name = "fiscalYearBox";
-            this.fiscalYearBox.Size = new System.Drawing.Size(68, 20);
-            this.fiscalYearBox.TabIndex = 5;
-            this.fiscalYearBox.TextChanged += new System.EventHandler(this.fiscalYearBox_TextChanged);
-            // 
-            // fyLabel
-            // 
-            this.fyLabel.AutoSize = true;
-            this.fyLabel.Location = new System.Drawing.Point(60, 34);
-            this.fyLabel.Name = "fyLabel";
-            this.fyLabel.Size = new System.Drawing.Size(59, 13);
-            this.fyLabel.TabIndex = 6;
-            this.fyLabel.Text = "Fiscal Year";
             // 
             // optionForm
             // 
