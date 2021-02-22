@@ -185,15 +185,6 @@ namespace StatementMerge
 			Console.WriteLine("Mail Item created for: " + recipient + ", Email: " + subject);
 		}
 
-		//private string uploadcsv()
-		//{
-		//	string fileName;
-		//	OpenFileDialog fd = new OpenFileDialog();
-		//	fd.ShowDialog();
-		//	fileName = fd.FileName;
-		//	return fileName;
-		//}
-
 		private DataTable csvToDataTable(string file)
 		{
 			StreamReader sr = new StreamReader(file);

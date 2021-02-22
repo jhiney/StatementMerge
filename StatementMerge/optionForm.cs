@@ -5,15 +5,12 @@ namespace StatementMerge
 {
     public partial class optionForm : Form
     {
-        
-        
         //Give this a default of today so that if nothing gets picked a variable is still passed and is not null.
         public string asofString = DateTime.Today.ToLongDateString();
 
         //Quarter string and fiscalYear combine to form subjectString
         public string quarterString = null;
         public string fiscalYear = DateTime.Today.Year.ToString();
-
         public string subjectString = null;
 
         //Pick folder containing the statements and the file that contains the list of receipients.
