@@ -152,7 +152,6 @@ namespace StatementMerge
 
 			mailItem.Subject = account + " "+ title+" Quarterly Statements";
 			mailItem.To = subject;
-			//<br/> is a html line break
 			string body = recipient + ", <br/> Attached is the quarterly statement for period ended "+asof+" for the " + account + " account. Please let me know if you have any questions or concerns. <br/>";
 
 			mailItem.HTMLBody = body + ReadSignature();
