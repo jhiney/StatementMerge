@@ -105,7 +105,7 @@ namespace StatementMerge
 				}
 			}
 			//Signifies the process was successful
-			Console.WriteLine("Process Completed");
+			Console.WriteLine("Process Completed. Press any key to exit.");
 			Console.ReadKey();
 		}
 
