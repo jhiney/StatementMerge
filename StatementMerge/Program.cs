@@ -195,13 +195,13 @@ namespace StatementMerge
 
 		private DataTable MatcherTable(DataTable table)
 		{
-			DataTable match = table.Rows.Cast<DataRow>()
+			DataTable matchTable = table.Rows.Cast<DataRow>()
 						   .GroupBy(x => x["E-mail Address"])
 						   .Where(g => g.Count() > 1)
 						   .SelectMany(k => k)
 						   .CopyToDataTable();
 			
-			return match;
+			return matchTable;
 		}
 
 		//THis is for people who have a singular statement
@@ -226,7 +226,7 @@ namespace StatementMerge
 		//This is for people who have multiple statements going to them
 		private List<string> GetPaths(List<string> designation, string folder)
 		{
-			List<string> path = new List<string>();
+			List<string> paths = new List<string>();
 
 			foreach (var item in designation)
 			{
@@ -237,10 +237,10 @@ namespace StatementMerge
 				foreach (FileInfo foundFile in filesInDir)
 				{
 					string fullName = foundFile.FullName;
-					path.Add(fullName);
+					paths.Add(fullName);
 				}
 			}
-			return path;
+			return paths;
 		}
 
 		//this string is the user who runs the script's default signature
